@@ -31,12 +31,28 @@ public class Controller {
 
 		// for now, always parsing the text file, will work on loading from file later
 		parseWordListFile();
+		validResults = new ArrayList<String>();
+		validResults.addAll(listOfAllWords);
+	}
+	
+	public void grabInputs() {
+		
 	}
 
-	public void generateAnswerPossibilities() {
+	private void generateAnswerPossibilities(int length, String currentKnown, String lettersNotUsed) {
 		// this is the overall controller function
 		// we want to take in user input, filter results, and display results on screen
+		filterOnLength(length); // taking all of the words in valid results, eliminiate those that are the wrong length
 		
+		
+	}
+	
+	private void filterOnLength(int length) {
+		for(String iter : validResults) {
+			if(iter.length() != length) {
+				validResults.remove(iter);
+			}
+		}
 	}
 	
 	private void writeResults(){

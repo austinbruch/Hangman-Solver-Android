@@ -9,8 +9,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.austinbruch.hangmansolver.controllers.Controller;
-
 public class MainActivity extends Activity {
 
 	@Override
@@ -20,11 +18,12 @@ public class MainActivity extends Activity {
 
 		if (savedInstanceState == null) {
 			getFragmentManager().beginTransaction()
-					.add(R.id.container, new PlaceholderFragment()).commit();
+					.add(R.id.container, new MainFragment()).commit();
 		}
 		
-		Controller controller = new Controller(this);
-		controller.loadWordList();
+		
+		
+		
 	}
 
 	@Override
