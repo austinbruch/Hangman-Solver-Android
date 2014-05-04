@@ -81,33 +81,61 @@
             android:inputType="textCapCharacters" />
     </LinearLayout>
 
+    <TextView
+        android:id="@+id/lettersNotIncludedLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Specify each letter known to not be included"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/lettersNotIncludedEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textCapCharacters" />
+
+    <Button
+        android:id="@+id/submitButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Search" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal" >
-        
-        <TextView 
+
+        <TextView
             android:id="@+id/sortMethodLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="sort by:"
-            android:textSize="20sp"/>
-        
+            android:textSize="20sp" />
+
         <Spinner
-        android:id="@+id/sortMethodSpinner"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:spinnerMode="dropdown" />
-        
-        
-        
+            android:id="@+id/sortMethodSpinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:spinnerMode="dropdown" />
     </LinearLayout>
 
-    
-
-    <ListView
-        android:id="@+id/resultsListView"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <ListView
+            android:id="@+id/wordResultsListView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="4" />
+
+        <ListView
+            android:id="@+id/lettersResultsListView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+    </LinearLayout>
 
 </LinearLayout>

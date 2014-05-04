@@ -16,7 +16,8 @@ import com.austinbruch.hangmansolver.models.Word;
 public class Controller {
 
 	private Context mContext;
-	private ArrayList<String>listOfWords;
+	private ArrayList<String>listOfAllWords;
+	private ArrayList<String>validResults;
 	private boolean DEBUG_MODE = true;
 
 
@@ -38,8 +39,12 @@ public class Controller {
 		
 	}
 	
+	private void writeResults(){
+		
+	}
+	
  	private void parseWordListFile(){
-		listOfWords = new ArrayList<String>();
+		listOfAllWords = new ArrayList<String>();
 		Scanner fileReader = null;
 
 		AssetManager assetManager = mContext.getResources().getAssets();
@@ -53,9 +58,9 @@ public class Controller {
 				while(fileReader.hasNext())
 				{
 					String currentWord = fileReader.nextLine().toUpperCase(Locale.getDefault());
-					listOfWords.add(currentWord);
+					listOfAllWords.add(currentWord);
 				}
-				Log.i("Test", "Size of arraylist:" + listOfWords.size());
+				Log.i("Test", "Size of arraylist:" + listOfAllWords.size());
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
