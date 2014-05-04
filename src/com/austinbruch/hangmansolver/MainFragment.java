@@ -54,11 +54,11 @@ public class MainFragment extends Fragment {
 	}
 
 	private void initializeSpinners() {
-		ArrayAdapter<CharSequence> letterCountAdapter = new ArrayAdapter(mContext, android.R.layout.simple_dropdown_item_1line, lengthChoices);
+		ArrayAdapter<CharSequence> letterCountAdapter = new ArrayAdapter<CharSequence>(mContext, android.R.layout.simple_dropdown_item_1line, lengthChoices);
 		//		letterCountAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		letterCountSpinner.setAdapter(letterCountAdapter);
 
-		ArrayAdapter<CharSequence> sortMethodAdapter = new ArrayAdapter(mContext, android.R.layout.simple_dropdown_item_1line, sortChoices);
+		ArrayAdapter<CharSequence> sortMethodAdapter = new ArrayAdapter<CharSequence>(mContext, android.R.layout.simple_dropdown_item_1line, sortChoices);
 		sortMethodSpinner.setAdapter(sortMethodAdapter);
 
 	}
