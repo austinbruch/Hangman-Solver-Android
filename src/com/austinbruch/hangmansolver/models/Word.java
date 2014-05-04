@@ -1,11 +1,10 @@
 package com.austinbruch.hangmansolver.models;
 
-import java.util.ArrayList;
 
 public class Word {
 	private int letterCount;
 	private String word;
-	private ArrayList<Character> lettersNotUsed = new ArrayList<Character>();
+	
 	
 	public int getLetterCount() {
 		return letterCount;
@@ -18,12 +17,6 @@ public class Word {
 	}
 	public void setWord(String word) {
 		this.word = word;
-	}
-	public ArrayList<Character> getLettersNotUsed() {
-		return lettersNotUsed;
-	}
-	public void setLettersNotUsed(ArrayList<Character> lettersNotUsed) {
-		this.lettersNotUsed = lettersNotUsed;
 	}
 
 	@Override

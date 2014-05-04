@@ -1,7 +1,6 @@
 package com.austinbruch.hangmansolver;
 
 import android.app.Activity;
-import android.app.ActionBar;
 import android.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,7 +8,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.os.Build;
+
+import com.austinbruch.hangmansolver.controllers.Controller;
 
 public class MainActivity extends Activity {
 
@@ -22,6 +22,9 @@ public class MainActivity extends Activity {
 			getFragmentManager().beginTransaction()
 					.add(R.id.container, new PlaceholderFragment()).commit();
 		}
+		
+		Controller controller = new Controller(this);
+		controller.loadWordList();
 	}
 
 	@Override
