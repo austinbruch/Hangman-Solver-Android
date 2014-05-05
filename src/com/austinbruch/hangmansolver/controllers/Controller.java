@@ -1,6 +1,5 @@
 package com.austinbruch.hangmansolver.controllers;
 
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -10,8 +9,6 @@ import java.util.Scanner;
 import android.content.Context;
 import android.content.res.AssetManager;
 import android.util.Log;
-
-import com.austinbruch.hangmansolver.models.Word;
 
 public class Controller {
 
@@ -29,24 +26,60 @@ public class Controller {
 		// first, try to load the ArrayList from the device from a previous save
 		// if we can't load it, then parse the file from into a new ArrayList
 
+		//		try {
+		//			FileInputStream fileIn = mContext.openFileInput("words.dat");
+		//			ObjectInputStream in = new ObjectInputStream(fileIn);
+		//			List<String> listOfAllWordsList = (List<String>)in.readObject();
+		//			listOfAllWords = (ArrayList<String>)listOfAllWordsList;
+		//			in.close();
+		//		} catch (Exception e) {
+		//			e.printStackTrace();
+		//		}
+		//		if(listOfAllWords == null) {
 		// for now, always parsing the text file, will work on loading from file later
+		Log.i("File Load", "Had to read from the text file");
 		parseWordListFile();
+		//		}
 		validResults = new ArrayList<String>();
 		validResults.addAll(listOfAllWords);
 	}
-	
+
+	//	public boolean saveWordList() {
+	//		Log.i("File","saveWordList() entered");
+	//		boolean result;
+	//		try
+	//		{
+	//			FileOutputStream fileOut = mContext.openFileOutput("words.dat", Context.MODE_PRIVATE);
+	//			ObjectOutputStream out = new ObjectOutputStream(fileOut);
+	//			out.writeObject(listOfAllWords);
+	//			out.close();
+	//		}
+	//		catch(IOException i)
+	//		{
+	//			
+	//			i.printStackTrace();
+	//			Log.i("File Save", "Saved to file FAILED: " + i.toString());
+	//			result = false;
+	//			return result;
+	//		}
+	//		Log.i("File Save", "Saved to file");
+	//		result =  true;
+	//		
+	//		return result;
+	//	}
+
 	public void grabInputs() {
-		
+
 	}
 
 	private void generateAnswerPossibilities(int length, String currentKnown, String lettersNotUsed) {
 		// this is the overall controller function
 		// we want to take in user input, filter results, and display results on screen
 		filterOnLength(length); // taking all of the words in valid results, eliminiate those that are the wrong length
-		
-		
+
+
 	}
-	
+
 	private void filterOnLength(int length) {
 		for(String iter : validResults) {
 			if(iter.length() != length) {
@@ -54,12 +87,12 @@ public class Controller {
 			}
 		}
 	}
-	
+
 	private void writeResults(){
-		
+
 	}
-	
- 	private void parseWordListFile(){
+
+	private void parseWordListFile(){
 		listOfAllWords = new ArrayList<String>();
 		Scanner fileReader = null;
 
